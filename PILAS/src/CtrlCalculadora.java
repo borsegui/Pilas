@@ -1,14 +1,4 @@
-/**
-Universidad del Valle de Guatemala
-Algoritmos y Estructura de Datos
-Sección: 10
 
-Christopher Chiroy
-Jose Ochoa
-Diego de León
-Hoja de Trabajo 2
-
- */
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.BufferedReader;
@@ -16,8 +6,8 @@ import java.util.Scanner;
 
 
 /**
- * @author Christopher , jose Ochoa, Diego de León
- *
+ * @author Christopher Chiroy, Jose Ochoa, Diego de León
+ * @category Hoja de Trabajo 2
  */
 
 public class CtrlCalculadora implements ADTCalculadora {
@@ -35,6 +25,8 @@ public class CtrlCalculadora implements ADTCalculadora {
 	
 	/**
 	 *lee el texto qeu contiene los numero con notacion postfix
+	 *pre: lee la operacion en archivo de texto
+	 *post: guarda la cadena en un atributo
 	 */
 	@Override
 	
@@ -62,11 +54,14 @@ public class CtrlCalculadora implements ADTCalculadora {
 		}
 	}
 
+	
 	@Override
 	public double calcular() throws Exception {
 		
 		double n1, n2;
 		/**
+		 * pre: recibe cadena con la operacion
+		 * post: resultado de la operacion
 		 *este es el que va conparando si es un operando como +,-;/;*
 		 */
 		// TODO Auto-generated method stub
@@ -119,24 +114,4 @@ public class CtrlCalculadora implements ADTCalculadora {
 		
 	}
 	
-	public static void main(String args[]){
-		/**
-		 *se crea el objeto scanner para pdoer leer el teclado
-		 */
-		CtrlCalculadora calcu = new CtrlCalculadora();
-		Scanner teclado = new Scanner(System.in);
-		System.out.println("Ingrese direccion de archivo");
-		String text = teclado.next();
-			calcu.readFile(text);
-		try {
-			System.out.println(""+calcu.calcular());
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			/**
-			 *mensaje al usuario por si existe un error en alguna operacion
-			 */
-			System.out.println("Error al hacer la operacion");
-		}
-	}
-
 }

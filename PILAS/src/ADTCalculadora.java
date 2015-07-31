@@ -1,39 +1,25 @@
 /**
-Universidad del Valle de Guatemala
-Algoritmos y Estructura de Datos
-Sección: 10
-
-Christopher Chiroy
-Jose Ochoa
-Diego de León
-Hoja de Trabajo 2
-
- */
-
 import java.io.FileNotFoundException;
 
-
-
-//public interface ADTCalculadora<P> {
-//
-//	public void readFile(String file) throws FileNotFoundException, Exception;
-//
-//	public P calcular() throws Exception;
-
-	
-
 /**
- * @author Christopher,jose,Alejandro
- *
+ * @author Christopher Chiroy, Jose Ochoa, Diego de León
+ * @category Hoja de Trabajo 2
  */
 public interface ADTCalculadora {
 
+	/**
+	 *pre: lee la operacion en archivo de texto
+	 *post: guarda la cadena en un atributo
+	 */
 	public void readFile(String file) throws FileNotFoundException, Exception;
 
+	/**
+	 * pre: recibe cadena con la operacion
+	 * post: resultado de la operacion
+	 */
 	public double calcular() throws Exception;
 
 	
 
 
 }
-
